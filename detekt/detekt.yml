@@ -1,0 +1,46 @@
+style:
+  MagicNumber:
+    active: true
+    ignoreNumbers: [0, 1, 2, 42]
+    ignoreHashCodeFunction: true
+    ignoreAnnotation: true
+  MaxLineLength:
+    active: true
+    maxLineLength: 120
+    excludePackageStatements: true
+    excludeImportStatements: true
+  SpacingBetweenPackageAndImports:
+    active: true
+
+complexity:
+  LargeClass:
+    active: true
+    threshold: 500
+  CyclomaticComplexMethod: # تحديث الاسم.
+    active: true
+    threshold: 15
+  TooManyFunctions:
+    active: true
+    thresholdInClasses: 20
+    thresholdInFiles: 30
+
+formatting:
+  active: true
+  maxLineLength: 120
+  indentSize: 4
+
+potential-bugs:
+  UnsafeCast:
+    active: true
+  EqualsWithHashCodeExist:
+    active: true
+
+comments:
+  CommentOverPrivateFunction:
+    active: false
+
+naming:
+  FunctionNaming:
+    active: true
+    functionPattern: '^[a-z][A-Za-z0-9]*$'
+

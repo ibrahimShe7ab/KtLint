@@ -1,35 +1,31 @@
-# https://editorconfig.org
 root = true
 
 [*]
+indent_style = tab
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+ charset = utf-8
+end_of_line = lf
+ij_kotlin_space_after_comma = true
+# md (GitHub shows code fences with 8 spaces)
+[*.md]
 indent_style = space
 indent_size = 2
-max_line_length = 140
-
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-
-[*.{java,kt,kts,scala,rs,xml,kt.spec,kts.spec}]
-indent_size = 4
-
-[*.{kt,kts}]
-
-
-# Don't allow any wildcard imports
-ij_kotlin_packages_to_use_import_on_demand = unset
-
-# Prevent wildcard imports
-ij_kotlin_name_count_to_use_star_import = 99
-ij_kotlin_name_count_to_use_star_import_for_members = 99
-
-[*.md]
 trim_trailing_whitespace = false
-max_line_length = unset
 
-[gradle/verification-metadata.xml]
-indent_size = 3
+[*.java]
+# Doc: https://youtrack.jetbrains.com/issue/IDEA-170643#focus=streamItem-27-3708697.0-0
+ij_java_imports_layout = $*,|,java.**,|,javax.**,|,org.**,|,com.**,|,com.diffplug.**,|,*
+ij_java_use_single_class_imports = true
+ij_java_class_count_to_use_import_on_demand = 999
+ij_java_names_count_to_use_import_on_demand = 999
 
-[*.yml]
-ij_yaml_spaces_within_brackets = false
+[*.xml.mustache]
+indent_style = space
+
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Prevent unexpected automatic indentation when crafting test-cases

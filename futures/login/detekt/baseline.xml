@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ClassNaming:user.kt$user</ID>
+    <ID>CommentSpacing:user.kt$user$//llllllllllllllll</ID>
+    <ID>ImportOrdering:ExampleUnitTest.kt$import org.junit.Test import org.junit.Assert.*</ID>
+    <ID>NoWildcardImports:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

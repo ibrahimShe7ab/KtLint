@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Myktlint"
 include(":app")
- 
+include(":futures")
+include(":futures:login")
