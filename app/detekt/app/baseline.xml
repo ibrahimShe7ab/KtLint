@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>CommentSpacing:MainActivity.kt$MainActivity$//////kmnkkkkkkkkkkkkkkk</ID>
+    <ID>Indentation:ExampleUnitTest.kt$ExampleUnitTest$ </ID>
+    <ID>Indentation:MainActivity.kt$MainActivity$ </ID>
+    <ID>NoConsecutiveBlankLines:MainActivity.kt$MainActivity$ </ID>
+  </CurrentIssues>
+</SmellBaseline>
