@@ -1,10 +1,39 @@
+import io.gitlab.arturbosch.detekt.Detekt
+import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
+
 plugins {
 	alias(libs.plugins.android.application)
 	alias(libs.plugins.kotlin.android)
+	// ktlint plugin
 	alias(libs.plugins.ktlint)
+	// spotless plugin
 	id("com.diffplug.spotless") version "7.0.0.BETA4"
+	// detekt plugin
+	id("io.gitlab.arturbosch.detekt") version "1.23.7"
+
 }
 
+detekt {
+	buildUponDefaultConfig = true // preconfigure defaults
+	allRules = true // activate all available (even unstable) rules.
+	config.setFrom("$rootDir/detekt/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
+	baseline = file("${projectDir}/detekt/baseline.xml") // a way of suppressing issues before introducing detekt
+}
+
+tasks.withType<Detekt>().configureEach {
+	reports {
+		html.required.set(true) // observe findings in your browser with structure and code snippets
+		xml.required.set(true) // checkstyle like format mainly for integrations like Jenkins
+
+	}
+}
+
+tasks.withType<Detekt>().configureEach {
+	jvmTarget = "1.8"
+}
+tasks.withType<DetektCreateBaselineTask>().configureEach {
+	jvmTarget = "1.8"
+}
 spotless {
 
 
@@ -92,4 +121,5 @@ dependencies {
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)
+	detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.7")
 }
